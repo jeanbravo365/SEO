@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparatif Plateformes - ExtensionBooster vs Product Hunt vs Capterra vs G2</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: landscape;
+            margin: 15mm;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #2d3748;
+            line-height: 1.6;
+        }
+
+        .page {
+            width: 297mm;
+            min-height: 210mm;
+            padding: 20mm;
+            margin: 0 auto 20px;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+        }
+
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #e2e8f0;
+        }
+
+        .header h1 {
+            font-size: 38px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .header .subtitle {
+            font-size: 18px;
+            color: #718096;
+            font-weight: 400;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #2d3748;
+            margin: 25px 0 15px;
+            padding-left: 15px;
+            border-left: 5px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-number {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        /* Cards */
+        .card {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 18px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-icon {
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+        }
+
+        /* Tables */
+        .table-container {
+            overflow-x: auto;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            font-size: 13px;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        th {
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        tbody tr:hover {
+            background: #f7fafc;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Platform Cards */
+        .platform-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            border: 3px solid;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .platform-card.extensionbooster {
+            border-color: #10b981;
+        }
+
+        .platform-card.producthunt {
+            border-color: #da552f;
+        }
+
+        .platform-card.capterra {
+            border-color: #00a98f;
+        }
+
+        .platform-card.g2 {
+            border-color: #f47920;
+        }
+
+        .platform-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .platform-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .extensionbooster .platform-icon { background: #10b981; }
+        .producthunt .platform-icon { background: #da552f; }
+        .capterra .platform-icon { background: #00a98f; }
+        .g2 .platform-icon { background: #f47920; }
+
+        .platform-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2d3748;
+        }
+
+        .platform-type {
+            font-size: 12px;
+            color: #718096;
+        }
+
+        .price-tag {
+            font-size: 28px;
+            font-weight: 800;
+            color: #667eea;
+            margin: 10px 0;
+        }
+
+        .price-period {
+            font-size: 13px;
+            color: #718096;
+            font-weight: 400;
+        }
+
+        /* Tags */
+        .tag {
+            display: inline-block;
+            padding: 3px 10px;
+            background: #edf2f7;
+            color: #4a5568;
+            border-radius: 5px;
+            font-size: 11px;
+            font-weight: 600;
+            margin: 2px;
+        }
+
+        .tag-success {
+            background: #d1fae5;
+            color: #059669;
+        }
+
+        .tag-warning {
+            background: #fef3c7;
+            color: #d97706;
+        }
+
+        .tag-danger {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+
+        .tag-primary {
+            background: #dbeafe;
+            color: #2563eb;
+        }
+
+        /* Comparison Matrix */
+        .matrix-container {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .matrix-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            gap: 10px;
+            padding: 12px;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            align-items: center;
+        }
+
+        .matrix-header {
+            font-weight: 700;
+            color: #2d3748;
+            font-size: 13px;
+        }
+
+        .matrix-cell {
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .stars {
+            color: #fbbf24;
+            font-weight: 700;
+        }
+
+        /* Roadmap */
+        .roadmap {
+            position: relative;
+            padding-left: 35px;
+            margin: 20px 0;
+        }
+
+        .roadmap::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #667eea, #764ba2);
+        }
+
+        .roadmap-item {
+            position: relative;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f7fafc;
+            border-radius: 8px;
+        }
+
+        .roadmap-item::before {
+            content: '';
+            position: absolute;
+            left: -28px;
+            top: 18px;
+            width: 13px;
+            height: 13px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #667eea;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, #fef5e7 0%, #fdebd0 100%);
+            border-left: 5px solid #f59e0b;
+            padding: 18px;
+            border-radius: 0 10px 10px 0;
+            margin: 15px 0;
+        }
+
+        .highlight-box-title {
+            font-weight: 700;
+            color: #92400e;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .highlight-box.blue {
+            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+            border-left-color: #4f46e5;
+        }
+
+        .highlight-box.blue .highlight-box-title {
+            color: #3730a3;
+        }
+
+        /* Lists */
+        .check-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .check-list li {
+            padding: 6px 0;
+            padding-left: 28px;
+            position: relative;
+            font-size: 13px;
+        }
+
+        .check-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background: #48bb78;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .cross-list li::before {
+            content: '✕';
+            background: #f56565;
+        }
+
+        /* Footer */
+        .footer {
+            position: absolute;
+            bottom: 20mm;
+            left: 20mm;
+            right: 20mm;
+            text-align: center;
+            color: #a0aec0;
+            font-size: 11px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 10px;
+        }
+
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 15px 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 12px;
+        }
+
+        .feature-icon {
+            width: 20px;
+            height: 20px;
+            background: #10b981;
+            color: white;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        .feature-icon.no {
+            background: #ef4444;
+        }
+
+        /* Stats */
+        .stat-box {
+            text-align: center;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .page {
+                box-shadow: none;
+                margin: 0;
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PAGE 1: COVER & OVERVIEW -->
+    <div class="page">
+        <div class="header">
+            <h1>🔍 Comparatif Plateformes 2026</h1>
+            <p class="subtitle">ExtensionBooster vs Product Hunt vs Capterra vs G2</p>
+            <span class="badge">Guide Stratégique pour Développeurs</span>
+        </div>
+
+        <div class="grid-4" style="margin-top: 30px;">
+            <div class="platform-card extensionbooster">
+                <div class="platform-header">
+                    <div class="platform-icon">EB</div>
+                    <div>
+                        <div class="platform-name">ExtensionBooster</div>
+                        <div class="platform-type">Niche Chrome Extensions</div>
+                    </div>
+                </div>
+                <div class="price-tag">$0<span class="price-period">/mois</span></div>
+                <span class="tag tag-success">Freemium</span>
+                <div class="feature-grid" style="margin-top: 15px;">
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <span>Reviews authentiques</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <span>Outils dev gratuits</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <span>SEO backlinks</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <span>Analytics CWS</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="platform-card producthunt">
+                <div class="platform-header">
+                    <div class="platform-icon">PH</div>
+                    <div>
+                        <div class="platform-name">Product Hunt</div>
+                        <div class="platform-type">Launch Tech Généraliste</div>
+                    </div>
+                </div>
+                <div class="price-tag">$0<span class="price-period">/mois</span></div>
+                <span class="tag tag-success">Gratuit</span>
+                <div class="feature-grid" style="margin-top: 15px;">
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <span>Visibilité massive</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <span>Communauté makers</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✕</div>
+                        <span>24h de trending</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✕</div>
+                        <span>No analytics API</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="platform-card capterra">
+                <div class="platform-header">
+                    <div class="platform-icon">CA</div>
+                    <div>
+                        <div class="platform-name">Capterra</div>
+                        <div class="platform-type">Annuaire Logiciels B2B</div>
+                    </div>
+                </div>
+                <div class="price-tag">$300<span class="price-period">/mois</span></div>
+                <span class="tag tag-warning">Pay-per-click</span>
+                <div class="feature-grid" style="margin-top: 15px;">
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <span>Leads B2B qualifiés</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <span>Avis vérifiés</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✕</div>
+                        <span>Coût élevé</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✕</div>
+                        <span>Pas pour extensions</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="platform-card g2">
+                <div class="platform-header">
+                    <div class="platform-icon">G2</div>
+                    <div>
+                        <div class="platform-name">G2</div>
+                        <div class="platform-type">Reviews Enterprise B2B</div>
+                    </div>
+                </div>
+                <div class="price-tag">$1.2k<span class="price-period">/an</span></div>
+                <span class="tag tag-warning">Enterprise</span>
+                <div class="feature-grid" style="margin-top: 15px;">
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <span>Crédibilité enterprise</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <span>Intent data</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✕</div>
+                        <span>Très cher</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✕</div>
+                        <span>Pour gros ACV</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">
+            <span class="section-number">1</span>
+            Vue d'ensemble Rapide
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Plateforme</th>
+                        <th>Type</th>
+                        <th>Cible Principale</th>
+                        <th>Modèle Économique</th>
+                        <th>Meilleur Pour</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>ExtensionBooster</strong></td>
+                        <td>🎯 Niche Chrome Extensions</td>
+                        <td>Développeurs d'extensions</td>
+                        <td>Freemium ($0-9.99/mois)</td>
+                        <td><span class="tag tag-success">Indie devs</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Product Hunt</strong></td>
+                        <td>🚀 Launch généraliste tech</td>
+                        <td>Startups, produits digitaux</td>
+                        <td>Gratuit + options payantes</td>
+                        <td><span class="tag tag-primary">Launch stratégique</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Capterra</strong></td>
+                        <td>📋 Annuaire logiciels B2B</td>
+                        <td>Éditeurs SaaS, PME</td>
+                        <td>Pay-per-click / abonnement</td>
+                        <td><span class="tag tag-warning">Leads B2B</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>G2</strong></td>
+                        <td>⭐ Reviews enterprise B2B</td>
+                        <td>Entreprises, décideurs IT</td>
+                        <td>Abonnement + lead gen</td>
+                        <td><span class="tag tag-warning">Enterprise</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="highlight-box">
+            <div class="highlight-box-title">💡 En Bref</div>
+            <p><strong>ExtensionBooster</strong> est le seul spécialisé Chrome Extensions avec un plan gratuit permanent. <strong>Product Hunt</strong> offre une visibilité massive mais éphémère. <strong>Capterra</strong> et <strong>G2</strong> ciblent le B2B enterprise avec des budgets significatifs.</p>
+        </div>
+
+        <div class="footer">
+            Comparatif Plateformes 2026 | ExtensionBooster vs Product Hunt vs Capterra vs G2 | Page 1
+        </div>
+    </div>
+
+    <!-- PAGE 2: COMPARATIF FONCTIONNALITÉS -->
+    <div class="page">
+        <div class="section-title">
+            <span class="section-number">2</span>
+            Comparatif Détaillé des Fonctionnalités
+        </div>
+
+        <h3 style="font-size: 18px; margin: 20px 0 15px; color: #667eea;">🔹 Visibilité & Découverte</h3>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Critère</th>
+                        <th style="width: 18%;">ExtensionBooster</th>
+                        <th style="width: 18%;">Product Hunt</th>
+                        <th style="width: 18%;">Capterra</th>
+                        <th style="width: 21%;">G2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Audience ciblée</strong></td>
+                        <td><span class="tag tag-success">Développeurs Chrome + early adopters</span></td>
+                        <td><span class="tag">Tech enthusiasts, investisseurs</span></td>
+                        <td><span class="tag">Acheteurs B2B, PME</span></td>
+                        <td><span class="tag">Décideurs enterprise, IT</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>SEO Backlinks</strong></td>
+                        <td><span class="tag tag-success">✅ Inclus (spécialisé CWS)</span></td>
+                        <td><span class="tag">⚠️ Lien nofollow</span></td>
+                        <td><span class="tag tag-success">✅ Lien dofollow (payant)</span></td>
+                        <td><span class="tag tag-success">✅ Lien dofollow (payant)</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Durée de visibilité</strong></td>
+                        <td><span class="tag tag-success">♾️ Permanente</span></td>
+                        <td><span class="tag-warning">⏱️ 24h trending + archive</span></td>
+                        <td><span class="tag tag-success">♾️ Permanente</span></td>
+                        <td><span class="tag tag-success">♾️ Permanente</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Algorithme</strong></td>
+                        <td>🔍 Recherche par catégorie + tags</td>
+                        <td>🔥 Votes communautaires + trending</td>
+                        <td>🎯 Filtres B2B + PPC sponsored</td>
+                        <td>📊 Grid Report + intention d'achat</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 style="font-size: 18px; margin: 25px 0 15px; color: #667eea;">🔹 Reviews & Feedback</h3>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Critère</th>
+                        <th style="width: 18%;">ExtensionBooster</th>
+                        <th style="width: 18%;">Product Hunt</th>
+                        <th style="width: 18%;">Capterra</th>
+                        <th style="width: 21%;">G2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Système de reviews</strong></td>
+                        <td>💬 Review Exchange (crédits) + feedback</td>
+                        <td>💬 Commentaires + upvotes</td>
+                        <td>⭐ Avis vérifiés + notation</td>
+                        <td>⭐ Avis vérifiés + Grid Score</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Authenticité</strong></td>
+                        <td><span class="tag tag-success">✅ 100% utilisateurs réels, CWS compliant</span></td>
+                        <td><span class="tag-warning">⚠️ Modération humaine</span></td>
+                        <td><span class="tag tag-success">✅ Vérification email + anti-fraud</span></td>
+                        <td><span class="tag tag-success">✅ Vérification LinkedIn + anti-fraud</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Incitation</strong></td>
+                        <td>🎁 Crédits échangeables (reviews ↔ reviews)</td>
+                        <td>🏆 Badges, visibilité, communauté</td>
+                        <td>💳 Gift cards occasionnelles</td>
+                        <td>🎁 Gift cards Amazon (campagnes)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Export reviews</strong></td>
+                        <td><span class="tag tag-success">✅ CSV/JSON/Excel gratuit</span></td>
+                        <td><span class="tag-danger">❌ Non disponible</span></td>
+                        <td><span class="tag">✅ Payant (plans pro)</span></td>
+                        <td><span class="tag">✅ Payant (enterprise)</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 style="font-size: 18px; margin: 25px 0 15px; color: #667eea;">🔹 Analytics & Intelligence</h3>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Critère</th>
+                        <th style="width: 18%;">ExtensionBooster</th>
+                        <th style="width: 18%;">Product Hunt</th>
+                        <th style="width: 18%;">Capterra</th>
+                        <th style="width: 21%;">G2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Analytics produit</strong></td>
+                        <td>📊 Installs, reviews, trends CWS</td>
+                        <td>📈 Votes, commentaires, trafic jour J</td>
+                        <td>📊 Leads, clics, conversions (payant)</td>
+                        <td>📊 Grid position, share of voice</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Analytics concurrents</strong></td>
+                        <td><span class="tag tag-success">✅ Extensions similaires</span></td>
+                        <td><span class="tag">❌ Limité aux produits "followés"</span></td>
+                        <td><span class="tag">✅ Payant (benchmark)</span></td>
+                        <td><span class="tag tag-success">✅ Tous plans</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Market intelligence</strong></td>
+                        <td>🎯 Tendances extensions Chrome</td>
+                        <td>🌐 Tendances tech généralistes</td>
+                        <td>💼 Tendances logiciels B2B</td>
+                        <td>🏢 Tendances enterprise + buyer intent</td>
+                    </tr>
+                    <tr>
+                        <td><strong>API données</strong></td>
+                        <td><span class="tag tag-success">✅ Premium ($9.99/mois)</span></td>
+                        <td><span class="tag-danger">❌ Non disponible</span></td>
+                        <td><span class="tag">✅ Enterprise uniquement</span></td>
+                        <td><span class="tag">✅ Enterprise uniquement</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer">
+            Comparatif Plateformes 2026 | ExtensionBooster vs Product Hunt vs Capterra vs G2 | Page 2
+        </div>
+    </div>
+
+    <!-- PAGE 3: PRICING & MATRICE -->
+    <div class="page">
+        <div class="section-title">
+            <span class="section-number">3</span>
+            Comparatif Pricing & Matrice de Décision
+        </div>
+
+        <div class="grid-4">
+            <div class="card">
+                <div class="card-title">
+                    <div class="card-icon" style="background: #10b981;">EB</div>
+                    ExtensionBooster
+                </div>
+                <div style="margin: 15px 0;">
+                    <div class="price-tag">$0<span class="price-period">/mois</span></div>
+                    <span class="tag tag-success">Starter (à vie)</span>
+                </div>
+                <ul class="check-list" style="font-size: 12px;">
+                    <li>1 extension</li>
+                    <li>Showcase page + SEO</li>
+                    <li>Outils gratuits illimités</li>
+                    <li>Support standard</li>
+                </ul>
+                <div style="margin-top: 15px; padding-top: 15px; border-top: 2px solid #e2e8f0;">
+                    <div class="price-tag" style="font-size: 22px;">$7.50<span class="price-period">/mois</span></div>
+                    <span class="tag tag-primary">Premium (annuel)</span>
+                    <ul class="check-list" style="font-size: 12px; margin-top: 10px;">
+                        <li>Extensions illimitées</li>
+                        <li>Analytics + API</li>
+                        <li>Support prioritaire</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">
+                    <div class="card-icon" style="background: #da552f;">PH</div>
+                    Product Hunt
+                </div>
+                <div style="margin: 15px 0;">
+                    <div class="price-tag">$0<span class="price-period">/mois</span></div>
+                    <span class="tag tag-success">Gratuit</span>
+                </div>
+                <ul class="check-list" style="font-size: 12px;">
+                    <li>Lancement illimité</li>
+                    <li>Page produit + commentaires</li>
+                    <li>Accès communauté</li>
+                    <li>Visibilité 24h trending</li>
+                </ul>
+                <div style="margin-top: 15px; padding-top: 15px; border-top: 2px solid #e2e8f0;">
+                    <div style="font-size: 12px; color: #718096; font-style: italic;">
+                        Options payantes sur demande (featured placement, newsletter)
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">
+                    <div class="card-icon" style="background: #00a98f;">CA</div>
+                    Capterra
+                </div>
+                <div style="margin: 15px 0;">
+                    <div class="price-tag">$3-15<span class="price-period">/clic</span></div>
+                    <span class="tag tag-warning">Pay-per-click</span>
+                </div>
+                <ul class="check-list" style="font-size: 12px;">
+                    <li>Listing de base inclus</li>
+                    <li>PPC pour top placement</li>
+                    <li>Lead generation payante</li>
+                    <li>Avis vérifiés</li>
+                </ul>
+                <div style="margin-top: 15px; padding-top: 15px; border-top: 2px solid #e2e8f0;">
+                    <div class="price-tag" style="font-size: 22px;">$300-1500<span class="price-period">/mois</span></div>
+                    <span class="tag tag-primary">Abonnement</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">
+                    <div class="card-icon" style="background: #f47920;">G2</div>
+                    G2
+                </div>
+                <div style="margin: 15px 0;">
+                    <div class="price-tag">$1.2k<span class="price-period">/an</span></div>
+                    <span class="tag tag-warning">Starter</span>
+                </div>
+                <ul class="check-list" style="font-size: 12px;">
+                    <li>Grid placement</li>
+                    <li>Lead generation</li>
+                    <li>Analytics de base</li>
+                    <li>Reviews vérifiées</li>
+                </ul>
+                <div style="margin-top: 15px; padding-top: 15px; border-top: 2px solid #e2e8f0;">
+                    <div class="price-tag" style="font-size: 22px;">$3-6k<span class="price-period">/an</span></div>
+                    <span class="tag tag-primary">Pro/Enterprise</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title" style="margin-top: 30px;">
+            <span class="section-number">4</span>
+            Matrice de Décision Rapide
+        </div>
+
+        <div class="matrix-container">
+            <div class="matrix-row matrix-header">
+                <div>Critère</div>
+                <div>ExtensionBooster</div>
+                <div>Product Hunt</div>
+                <div>Capterra</div>
+                <div>G2</div>
+            </div>
+            <div class="matrix-row">
+                <div class="matrix-cell" style="font-weight: 600; text-align: left; padding-left: 10px;">Budget limité</div>
+                <div class="matrix-cell stars">⭐⭐⭐⭐⭐</div>
+                <div class="matrix-cell stars">⭐⭐⭐⭐⭐</div>
+                <div class="matrix-cell stars">⭐⭐</div>
+                <div class="matrix-cell stars">⭐</div>
+            </div>
+            <div class="matrix-row">
+                <div class="matrix-cell" style="font-weight: 600; text-align: left; padding-left: 10px;">Extension Chrome</div>
+                <div class="matrix-cell stars">⭐⭐⭐⭐⭐</div>
+                <div class="matrix-cell stars">⭐⭐⭐</div>
+                <div class="matrix-cell stars">⭐⭐</div>
+                <div class="matrix-cell stars">⭐</div>
+            </div>
+            <div class="matrix-row">
+                <div class="matrix-cell" style="font-weight: 600; text-align: left; padding-left: 10px;">Visibilité tech</div>
+                <div class="matrix-cell stars">⭐⭐⭐</div>
+                <div class="matrix-cell stars">⭐⭐⭐⭐⭐</div>
+                <div class="matrix-cell stars">⭐⭐</div>
+                <div class="matrix-cell stars">⭐⭐</div>
+            </div>
+            <div class="matrix-row">
+                <div class="matrix-cell" style="font-weight: 600; text-align: left; padding-left: 10px;">Leads B2B</div>
+                <div class="matrix-cell stars">⭐⭐</div>
+                <div class="matrix-cell stars">⭐⭐⭐</div>
+                <div class="matrix-cell stars">⭐⭐⭐⭐⭐</div>
+                <div class="matrix-cell stars">⭐⭐⭐⭐</div>
+            </div>
+            <div class="matrix-row">
+                <div class="matrix-cell" style="font-weight: 600; text-align: left; padding-left: 10px;">Crédibilité enterprise</div>
+                <div class="matrix-cell stars">⭐</div>
+                <div class="matrix-cell stars">⭐⭐</div>
+                <div class="matrix-cell stars">⭐⭐⭐</div>
+                <div class="matrix-cell stars">⭐⭐⭐⭐⭐</div>
+            </div>
+        </div>
+
+        <div class="highlight-box blue">
+            <div class="highlight-box-title">🏆 Verdict Pricing</div>
+            <p><strong>ExtensionBooster</strong> est de loin le plus accessible, surtout pour les indie developers et petits budgets. Le plan gratuit permanent est unique sur le marché.</p>
+        </div>
+
+        <div class="footer">
+            Comparatif Plateformes 2026 | ExtensionBooster vs Product Hunt vs Capterra vs G2 | Page 3
+        </div>
+    </div>
+
+    <!-- PAGE 4: RECOMMANDATIONS & STRATÉGIE -->
+    <div class="page">
+        <div class="section-title">
+            <span class="section-number">5</span>
+            Quand Utiliser Quelle Plateforme ?
+        </div>
+
+        <div class="grid-2">
+            <div class="card" style="border-top: 4px solid #10b981;">
+                <div class="card-title">
+                    <div class="card-icon" style="background: #10b981;">✅</div>
+                    Choisissez ExtensionBooster si...
+                </div>
+                <ul class="check-list" style="font-size: 13px; margin-top: 10px;">
+                    <li>Vous développez une <strong>extension Chrome</strong></li>
+                    <li>Vous avez un <strong>budget limité</strong> ou voulez tester gratuitement</li>
+                    <li>Vous cherchez des <strong>reviews authentiques</strong> sans risquer votre compte CWS</li>
+                    <li>Vous voulez accéder à des <strong>outils techniques gratuits</strong> (MV2→V3, icons, exports)</li>
+                    <li>Vous souhaitez échanger avec une <strong>communauté de développeurs pairs</strong></li>
+                </ul>
+            </div>
+
+            <div class="card" style="border-top: 4px solid #da552f;">
+                <div class="card-title">
+                    <div class="card-icon" style="background: #da552f;">✅</div>
+                    Choisissez Product Hunt si...
+                </div>
+                <ul class="check-list" style="font-size: 13px; margin-top: 10px;">
+                    <li>Vous lancez un <strong>produit tech plus large</strong> (SaaS, app mobile)</li>
+                    <li>Vous visez une <strong>visibilité internationale</strong> et médiatique</li>
+                    <li>Vous voulez attirer des <strong>investisseurs, partenaires</strong></li>
+                    <li>Vous êtes prêt à orchestrer une <strong>campagne de launch</strong> (emailing, social)</li>
+                    <li>Vous cherchez du <strong>feedback communautaire large</strong></li>
+                </ul>
+            </div>
+
+            <div class="card" style="border-top: 4px solid #00a98f;">
+                <div class="card-title">
+                    <div class="card-icon" style="background: #00a98f;">✅</div>
+                    Choisissez Capterra si...
+                </div>
+                <ul class="check-list" style="font-size: 13px; margin-top: 10px;">
+                    <li>Vous ciblez des <strong>PME et acheteurs B2B</strong></li>
+                    <li>Vous vendez un <strong>logiciel avec cycle de vente court/moyen</strong></li>
+                    <li>Vous avez un <strong>budget marketing B2B</strong> pour du PPC</li>
+                    <li>Vous voulez apparaître dans des <strong>comparatifs logiciels</strong></li>
+                    <li>Vous générez des <strong>leads qualifiés B2B</strong></li>
+                </ul>
+            </div>
+
+            <div class="card" style="border-top: 4px solid #f47920;">
+                <div class="card-title">
+                    <div class="card-icon" style="background: #f47920;">✅</div>
+                    Choisissez G2 si...
+                </div>
+                <ul class="check-list" style="font-size: 13px; margin-top: 10px;">
+                    <li>Vous ciblez des <strong>entreprises et décideurs IT</strong></li>
+                    <li>Vous avez une <strong>stratégie ABM (Account-Based Marketing)</strong></li>
+                    <li>Vous visez la <strong>crédibilité enterprise</strong> et les Grid Reports</li>
+                    <li>Vous vendez des <strong>solutions à fort ACV</strong> (Annual Contract Value)</li>
+                    <li>Vous avez besoin d'<strong>intent data avancée</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-title" style="margin-top: 30px;">
+            <span class="section-number">6</span>
+            Stratégie Recommandée par Profil
+        </div>
+
+        <div class="roadmap">
+            <div class="roadmap-item">
+                <h4 style="color: #10b981; margin-bottom: 8px;">👤 Pour un développeur indie d'extension Chrome</h4>
+                <div style="background: white; padding: 12px; border-radius: 8px; margin-top: 10px;">
+                    <p style="font-size: 13px; margin-bottom: 8px;"><strong>1️⃣ Commencez par ExtensionBooster (gratuit)</strong></p>
+                    <ul class="check-list" style="font-size: 12px; margin-left: 15px;">
+                        <li>Showcase page + outils techniques + premières reviews</li>
+                    </ul>
+                    <p style="font-size: 13px; margin: 10px 0 8px;"><strong>2️⃣ Lancez sur Product Hunt au moment du "big launch"</strong></p>
+                    <ul class="check-list" style="font-size: 12px; margin-left: 15px;">
+                        <li>Visibilité maximale + feedback communautaire large</li>
+                    </ul>
+                    <p style="font-size: 13px; margin: 10px 0 8px;"><strong>3️⃣ Si vous scalez vers un SaaS B2B → ajoutez Capterra ou G2</strong></p>
+                    <ul class="check-list" style="font-size: 12px; margin-left: 15px;">
+                        <li>Pour capter des leads enterprise qualifiés</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="roadmap-item">
+                <h4 style="color: #667eea; margin-bottom: 8px;">🏢 Pour une agence / éditeur SaaS avec extension Chrome</h4>
+                <div style="background: white; padding: 12px; border-radius: 8px; margin-top: 10px;">
+                    <p style="font-size: 13px; margin-bottom: 8px;"><strong>1️⃣ Listez l'extension sur ExtensionBooster Premium ($9.99/mois)</strong></p>
+                    <ul class="check-list" style="font-size: 12px; margin-left: 15px;">
+                        <li>Analytics concurrents + reviews authentiques + SEO</li>
+                    </ul>
+                    <p style="font-size: 13px; margin: 10px 0 8px;"><strong>2️⃣ Utilisez Product Hunt pour les nouvelles fonctionnalités majeures</strong></p>
+                    <ul class="check-list" style="font-size: 12px; margin-left: 15px;">
+                        <li>Créer du buzz et attirer des early adopters</li>
+                    </ul>
+                    <p style="font-size: 13px; margin: 10px 0 8px;"><strong>3️⃣ Investissez dans G2 si votre cœur de métier est B2B enterprise</strong></p>
+                    <ul class="check-list" style="font-size: 12px; margin-left: 15px;">
+                        <li>Grid placement + intent data + lead generation qualifiée</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <div class="highlight-box-title">⚠️ Points de Vigilance</div>
+            <div class="grid-2" style="margin-top: 10px;">
+                <div>
+                    <p style="font-size: 13px;"><strong>🔒 Reviews authentiques :</strong> ExtensionBooster garantit 100% conformité Chrome Web Store. Évitez les fake reviews.</p>
+                </div>
+                <div>
+                    <p style="font-size: 13px;"><strong>🎯 Ne dispersez pas votre budget :</strong> Mieux vaut exceller sur 1-2 plateformes que d'être moyen partout.</p>
+                </div>
+                <div>
+                    <p style="font-size: 13px;"><strong>📊 Mesurez le ROI :</strong> Trackez vos installs, reviews et conversions par plateforme.</p>
+                </div>
+                <div>
+                    <p style="font-size: 13px;"><strong>🤝 La communauté > la plateforme :</strong> L'engagement actif multiplie l'impact par 10.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            Comparatif Plateformes 2026 | ExtensionBooster vs Product Hunt vs Capterra vs G2 | Page 4
+        </div>
+    </div>
+
+</body>
+</html>
