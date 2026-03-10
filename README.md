@@ -54,7 +54,6 @@ Ce dépôt contient **2 guides HTML complets**, conçus pour être consultés da
 ### 🔹 En local
 # Cloner le dépôt
 git clone https://github.com/jeanbravo365/SEO.git
-cd SEO
 
 ### 🔹 Impression PDF
 Ces guides sont optimisés pour l'impression :
@@ -89,48 +88,14 @@ Ces guides sont figés pour l'année **2026**. Pour proposer des corrections ou 
 
 ---
 
-## 📄 Licence
+## 🌐 Voir les guides en ligne
 
-MIT © 2026 - Usage personnel et professionnel autorisé.  
-Les marques et logos mentionnés appartiennent à leurs propriétaires respectifs.
+Consultez directement les guides dans votre navigateur via GitHub Pages :
 
----
+🔗 [Automatisation_LinkedIn_2026.html](https://bravo365.github.io/SEO/Automatisation_LinkedIn_2026.html)  
+🔗 [Extensions_SEO_2026.html](https://bravo365.github.io/SEO/Extensions_SEO_2026.html)
 
-> 💡 **Astuce pro** : Ces guides sont conçus dans l'esprit de la formation **Backlink Battleplan 2.0** : contenu actionnable, visuel impactant, et optimisé pour le partage interne en équipe.
-
----
-
-*Document généré pour le dépôt [jeanbravo365/SEO](https://github.com/jeanbravo365/SEO)*  
-*Dernière mise à jour : Mars 2026*### 🔹 Impression PDF
-Ces guides sont optimisés pour l'impression :
-1. Ouvrez le fichier HTML dans Chrome/Firefox
-2. `Ctrl+P` (ou `Cmd+P` sur Mac)
-3. Destination : **"Enregistrer au format PDF"**
-4. Format : **Paysage**, Marges : **Par défaut**
-5. ✅ Activer "Graphiques d'arrière-plan" pour conserver les dégradés
-
----
-
-## 🎨 Design & Technologie
-
-- **Framework CSS** : CSS pur avec variables, Grid, Flexbox
-- **Typographie** : Google Fonts (Inter)
-- **Responsive** : Adapté desktop + optimisation print
-- **Accessibilité** : Contrastes WCAG, structure sémantique
-- **Performance** : Aucun JS externe, chargement instantané
-
----
-
-## 📈 Mise à jour & Contribution
-
-Ces guides sont figés pour l'année **2026**. Pour proposer des corrections ou améliorations :
-
-1. Fork ce dépôt
-2. Créez une branche : `git checkout -b fix/typo-guide-linkedin`
-3. Modifiez le fichier concerné
-4. Ouvrez une Pull Request avec une description claire
-
-> ⚠️ Les données tarifaires et fonctionnalités sont susceptibles d'évoluer. Vérifiez toujours les sites officiels des outils avant toute décision d'achat.
+> 💡 *Astuce : Ajoutez ces liens en favori pour un accès rapide depuis votre équipe.*
 
 ---
 
@@ -146,6 +111,6 @@ Les marques et logos mentionnés appartiennent à leurs propriétaires respectif
 ---
 
 *Document généré pour le dépôt [jeanbravo365/SEO](https://github.com/jeanbravo365/SEO)*  
-*Dernière mise à jour : Mars 2026*open Automatisation_LinkedIn_2026.html
-# ou
-open Extensions_SEO_2026.html
+*Dernière mise à jour : Mars 2026*
+cd SEO
+
