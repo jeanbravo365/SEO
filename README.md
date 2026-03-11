@@ -92,8 +92,8 @@ Ces guides sont figés pour l'année **2026**. Pour proposer des corrections ou 
 
 Consultez directement les guides dans votre navigateur via GitHub Pages :
 
-🔗 [Automatisation_LinkedIn_2026.html](https://bravo365.github.io/SEO/Automatisation_LinkedIn_2026.html)  
-🔗 [Extensions_SEO_2026.html](https://bravo365.github.io/SEO/Extensions_SEO_2026.html)
+🔗 [Automatisation_LinkedIn_2026.html](https://jeanbravo365.github.io/SEO/Automatisation_LinkedIn_2026.html)  
+🔗 [Extensions_SEO_2026.html](https://jeanbravo365.github.io/SEO/Extensions_SEO_2026.html)
 
 > 💡 *Astuce : Ajoutez ces liens en favori pour un accès rapide depuis votre équipe.*
 
