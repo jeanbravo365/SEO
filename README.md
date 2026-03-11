@@ -1,12 +1,12 @@
 # 🚀 SEO - Guides Comparatifs 2026
 
-> Collection de guides HTML imprimables dédiés au SEO, à l'automatisation et à la croissance digitale.
+> Collection de guides HTML interactifs dédiés au SEO, à l'automatisation et à la croissance digitale.
 
 ---
 
 ## 📁 Contenu du dépôt
 
-Ce dépôt contient **2 guides HTML complets**, conçus pour être consultés dans un navigateur ou imprimés en PDF :
+Ce dépôt contient **3 guides HTML complets**, conçus pour être consultés dans un navigateur, imprimés en PDF ou partagés en équipe :
 
 ### 🔹 `Automatisation_LinkedIn_2026.html`
 **Guide comparatif des outils d'automatisation LinkedIn**
@@ -23,6 +23,8 @@ Ce dépôt contient **2 guides HTML complets**, conçus pour être consultés da
 - Matrice de décision par profil utilisateur
 - Roadmap de déploiement en 3 phases
 - Tendances 2026 : IA, multicanal, conformité RGPD
+
+🔗 [Voir en ligne](https://jeanbravo365.github.io/SEO/Automatisation_LinkedIn_2026.html)
 
 ---
 
@@ -42,75 +44,50 @@ Ce dépôt contient **2 guides HTML complets**, conçus pour être consultés da
 - Matrice de décision rapide (étoiles par critère)
 - Stratégie recommandée par profil (indie dev → enterprise)
 
+🔗 [Voir en ligne](https://jeanbravo365.github.io/SEO/Extensions_SEO_2026.html)
+
+---
+
+### 🔹 `Comparatif_Outils_Creatifs_2026.html` ⭐ Nouveau
+**Guide comparatif des outils créatifs marketing : Previewed • FlexClip • Figma • Canva**
+
+| Outils analysés | Previewed.app • FlexClip • Figma • Canva |
+|----------------|------------------------------------------|
+| 🎯 Public cible | Freelances, agences, créateurs de contenu, équipes marketing |
+| 📊 Contenu | 6 slides interactives : présentation, tableau comparatif, workflow projet, analyse SWOT, matrice de décision, ressources |
+| ✨ Points forts | Design slide-style vertical, navigation fluide, optimisé 14" laptop, recommandations par profil |
+
+**Sections clés :**
+- Présentation des 4 outils avec forces, pricing et cas d'usage
+- Tableau comparatif détaillé (facilité, templates, collaboration, intégrations, export, analytics)
+- Workflow projet : à quelle étape utiliser chaque outil (stratégie → création → validation → publication)
+- Analyse SWOT : forces & limites par plateforme
+- Matrice de décision rapide par profil (freelance, vidéo-first, agence, designer)
+- Synthèse + liens officiels pour démarrer
+
+🔗 [Voir en ligne](https://jeanbravo365.github.io/SEO/Comparatif_Outils_Creatifs_2026.html)
+
+> 💡 *Format slide vertical : naviguez avec les flèches ↑↓, la souris ou les dots de navigation. Optimisé pour écran 14" et impression paysage.*
+
 ---
 
 ## 🛠️ Comment utiliser ces guides
 
 ### 🔹 En ligne
-1. Cliquez sur le fichier HTML souhaité dans ce dépôt
-2. GitHub l'affichera directement dans votre navigateur
-3. Profitez du design responsive et des interactions
+1. Cliquez sur le lien "Voir en ligne" du guide souhaité
+2. Le guide s'ouvre directement dans votre navigateur via GitHub Pages
+3. Profitez du design responsive, des interactions et de la navigation fluide
 
 ### 🔹 En local
+```bash
 # Cloner le dépôt
 git clone https://github.com/jeanbravo365/SEO.git
-
-### 🔹 Impression PDF
-Ces guides sont optimisés pour l'impression :
-1. Ouvrez le fichier HTML dans Chrome/Firefox
-2. `Ctrl+P` (ou `Cmd+P` sur Mac)
-3. Destination : **"Enregistrer au format PDF"**
-4. Format : **Paysage**, Marges : **Par défaut**
-5. ✅ Activer "Graphiques d'arrière-plan" pour conserver les dégradés
-
----
-
-## 🎨 Design & Technologie
-
-- **Framework CSS** : CSS pur avec variables, Grid, Flexbox
-- **Typographie** : Google Fonts (Inter)
-- **Responsive** : Adapté desktop + optimisation print
-- **Accessibilité** : Contrastes WCAG, structure sémantique
-- **Performance** : Aucun JS externe, chargement instantané
-
----
-
-## 📈 Mise à jour & Contribution
-
-Ces guides sont figés pour l'année **2026**. Pour proposer des corrections ou améliorations :
-
-1. Fork ce dépôt
-2. Créez une branche : `git checkout -b fix/typo-guide-linkedin`
-3. Modifiez le fichier concerné
-4. Ouvrez une Pull Request avec une description claire
-
-> ⚠️ Les données tarifaires et fonctionnalités sont susceptibles d'évoluer. Vérifiez toujours les sites officiels des outils avant toute décision d'achat.
-
----
-
-## 🌐 Voir les guides en ligne
-
-Consultez directement les guides dans votre navigateur via GitHub Pages :
-
-🔗 [Automatisation_LinkedIn_2026.html](https://jeanbravo365.github.io/SEO/Automatisation_LinkedIn_2026.html)  
-🔗 [Extensions_SEO_2026.html](https://jeanbravo365.github.io/SEO/Extensions_SEO_2026.html)
-
-> 💡 *Astuce : Ajoutez ces liens en favori pour un accès rapide depuis votre équipe.*
-
----
-
-## 📄 Licence
-
-MIT © 2026 - Usage personnel et professionnel autorisé.  
-Les marques et logos mentionnés appartiennent à leurs propriétaires respectifs.
-
----
-
-> 💡 **Astuce pro** : Ces guides sont conçus dans l'esprit de la formation **Backlink Battleplan 2.0** : contenu actionnable, visuel impactant, et optimisé pour le partage interne en équipe.
-
----
-
-*Document généré pour le dépôt [jeanbravo365/SEO](https://github.com/jeanbravo365/SEO)*  
-*Dernière mise à jour : Mars 2026*
 cd SEO
 
+# Ouvrir un fichier dans votre navigateur
+# macOS
+open Automatisation_LinkedIn_2026.html
+# Windows
+start Automatisation_LinkedIn_2026.html
+# Linux
+xdg-open Automatisation_LinkedIn_2026.html
