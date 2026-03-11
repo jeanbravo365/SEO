@@ -1,0 +1,975 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Comparatif Outils Créatifs 2026 | Preview.app • FlexClip • Figma • Canva</title>
+  <meta name="description" content="Guide comparatif slide-style : Preview.app, FlexClip, Figma, Canva. Forces, cas d'usage, pricing, workflow projet." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --bg-card: #334155;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --accent-primary: #6366f1;
+      --accent-secondary: #22d3ee;
+      --accent-success: #10b981;
+      --accent-warning: #f59e0b;
+      --accent-danger: #ef4444;
+      --border-color: #475569;
+      --slide-gap: 24px;
+      --radius: 16px;
+      --shadow: 0 10px 40px rgba(0,0,0,0.4);
+      --font-main: 'Inter', system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: var(--font-main);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Slide Container - Landscape Format */
+    .slides {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 100vw;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .slide {
+      scroll-snap-align: start;
+      width: 100vw;
+      height: 100vh;
+      padding: 48px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      background: 
+        radial-gradient(ellipse at top right, rgba(99,102,241,0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom left, rgba(34,211,238,0.1) 0%, transparent 50%);
+    }
+
+    /* Header Styles */
+    .slide-header {
+      margin-bottom: 32px;
+    }
+    .slide-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+    }
+    .slide-title {
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .slide-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      max-width: 700px;
+    }
+
+    /* Content Grid */
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--slide-gap);
+      flex: 1;
+      align-items: start;
+    }
+
+    .tool-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .tool-card:hover {
+      border-color: var(--accent-primary);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+    .tool-card.highlight {
+      border: 2px solid var(--accent-primary);
+      background: linear-gradient(145deg, var(--bg-secondary), rgba(99,102,241,0.1));
+    }
+
+    .tool-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 16px;
+    }
+    .tool-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .tool-icon.preview { background: linear-gradient(135deg, #667eea, #764ba2); }
+    .tool-icon.flexclip { background: linear-gradient(135deg, #f093fb, #f5576c); }
+    .tool-icon.figma { background: linear-gradient(135deg, #f24e1e, #ff7262); }
+    .tool-icon.canva { background: linear-gradient(135deg, #00c4cc, #7d59ff); }
+    
+    .tool-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    .tool-tagline {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    .tool-section {
+      margin-bottom: 16px;
+    }
+    .tool-section-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    .tool-list {
+      list-style: none;
+      font-size: 0.9rem;
+    }
+    .tool-list li {
+      padding: 4px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .tool-list li::before {
+      content: "•";
+      color: var(--accent-secondary);
+      font-weight: bold;
+    }
+    .tool-list li.pro::before { content: "✓"; color: var(--accent-success); }
+    .tool-list li.con::before { content: "✗"; color: var(--accent-danger); }
+
+    .price-tag {
+      display: inline-block;
+      background: var(--bg-card);
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 4px 0;
+    }
+    .price-tag.free { color: var(--accent-success); }
+    .price-tag.pro { color: var(--accent-primary); }
+
+    /* Rating Stars */
+    .rating {
+      display: flex;
+      gap: 2px;
+      margin: 8px 0;
+    }
+    .star {
+      color: var(--border-color);
+      font-size: 0.9rem;
+    }
+    .star.filled { color: var(--accent-warning); }
+
+    /* Comparison Table Slide */
+    .table-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      background: var(--bg-secondary);
+      border-radius: var(--radius);
+      overflow: hidden;
+      font-size: 0.9rem;
+    }
+    .comparison-table th {
+      background: var(--bg-card);
+      padding: 16px;
+      text-align: left;
+      font-weight: 700;
+      border-bottom: 2px solid var(--border-color);
+      position: sticky;
+      top: 0;
+    }
+    .comparison-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border-color);
+      vertical-align: top;
+    }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table tr:hover { background: rgba(99,102,241,0.1); }
+    
+    .criteria-col {
+      font-weight: 600;
+      width: 180px;
+      color: var(--accent-secondary);
+    }
+    .best-pick {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(16,185,129,0.2);
+      color: var(--accent-success);
+      padding: 2px 10px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    /* Workflow Timeline */
+    .workflow-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--slide-gap);
+      flex: 1;
+      align-items: start;
+    }
+    .workflow-step {
+      background: var(--bg-secondary);
+      border-radius: var(--radius);
+      padding: 24px;
+      border-left: 4px solid var(--accent-primary);
+    }
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: var(--accent-primary);
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+    .step-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .step-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+    .step-tool {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 4px;
+      background: var(--bg-card);
+      font-weight: 500;
+    }
+    .step-tool.recommended {
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      color: white;
+    }
+
+    /* Decision Matrix */
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--slide-gap);
+      flex: 1;
+      align-items: start;
+    }
+    .matrix-card {
+      background: var(--bg-secondary);
+      border-radius: var(--radius);
+      padding: 24px;
+      border: 1px solid var(--border-color);
+    }
+    .matrix-card h4 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .matrix-card ul {
+      list-style: none;
+      font-size: 0.95rem;
+    }
+    .matrix-card li {
+      padding: 6px 0;
+      border-bottom: 1px dashed var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .matrix-card li:last-child { border-bottom: none; }
+    .winner {
+      font-weight: 700;
+      color: var(--accent-success);
+    }
+
+    /* Footer Nav */
+    .slide-footer {
+      position: absolute;
+      bottom: 24px;
+      right: 48px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+    .slide-number {
+      background: var(--bg-card);
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    .slide-nav {
+      display: flex;
+      gap: 8px;
+    }
+    .nav-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--border-color);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .nav-dot.active {
+      background: var(--accent-primary);
+      transform: scale(1.2);
+    }
+
+    /* Print Optimization - Landscape */
+    @media print {
+      .slides { 
+        display: block; 
+        height: auto; 
+        overflow: visible;
+      }
+      .slide {
+        width: 100%;
+        height: 100vh;
+        page-break-after: always;
+        scroll-snap-align: none;
+      }
+      .slide:last-child { page-break-after: auto; }
+      .slide-footer { position: relative; bottom: auto; right: auto; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+
+    /* Responsive */
+    @media (max-width: 1400px) {
+      .content-grid, .workflow-container { grid-template-columns: repeat(2, 1fr); }
+      .matrix-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 900px) {
+      .slide { padding: 32px; }
+      .content-grid, .workflow-container, .matrix-grid { grid-template-columns: 1fr; }
+      .comparison-table { font-size: 0.8rem; }
+      .comparison-table th, .comparison-table td { padding: 10px 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slides">
+
+    <!-- SLIDE 1 : COVER -->
+    <section class="slide">
+      <div class="slide-header">
+        <span class="slide-tag">🎨 Guide Comparatif 2026</span>
+        <h1 class="slide-title">Outils Créatifs Marketing<br>Preview • FlexClip • Figma • Canva</h1>
+        <p class="slide-subtitle">Analyse professionnelle : forces, cas d'usage, pricing, compatibilité et intégration dans votre workflow projet.</p>
+      </div>
+      
+      <div class="content-grid">
+        <div class="tool-card highlight">
+          <div class="tool-header">
+            <div class="tool-icon preview">P</div>
+            <div>
+              <div class="tool-name">Preview.app</div>
+              <div class="tool-tagline">Social Media Planning</div>
+            </div>
+          </div>
+          <div class="tool-section">
+            <div class="tool-section-title">💡 Meilleur pour</div>
+            <ul class="tool-list">
+              <li>Planification Instagram & LinkedIn</li>
+              <li>Preview grid & esthétique feed</li>
+              <li>Analytics sociaux intégrés</li>
+            </ul>
+          </div>
+          <div class="price-tag pro">Pro : 19€/mois</div>
+          <div class="rating">
+            <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">☆</span>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-header">
+            <div class="tool-icon flexclip">F</div>
+            <div>
+              <div class="tool-name">FlexClip</div>
+              <div class="tool-tagline">Vidéo & Reels Maker</div>
+            </div>
+          </div>
+          <div class="tool-section">
+            <div class="tool-section-title">💡 Meilleur pour</div>
+            <ul class="tool-list">
+              <li>Reels, TikTok, Shorts</li>
+              <li>Montage vidéo simplifié</li>
+              <li>Voiceover IA & sous-titres auto</li>
+            </ul>
+          </div>
+          <div class="price-tag pro">Pro : 12€/mois</div>
+          <div class="rating">
+            <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">☆</span>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-header">
+            <div class="tool-icon figma">Fg</div>
+            <div>
+              <div class="tool-name">Figma</div>
+              <div class="tool-tagline">Design Pro & Collaboration</div>
+            </div>
+          </div>
+          <div class="tool-section">
+            <div class="tool-section-title">💡 Meilleur pour</div>
+            <ul class="tool-list">
+              <li>Design system & charte graphique</li>
+              <li>Collaboration temps réel</li>
+              <li>Handoff développeur</li>
+            </ul>
+          </div>
+          <div class="price-tag pro">Pro : 15€/mois</div>
+          <div class="rating">
+            <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-header">
+            <div class="tool-icon canva">C</div>
+            <div>
+              <div class="tool-name">Canva</div>
+              <div class="tool-tagline">All-in-One Créatif</div>
+            </div>
+          </div>
+          <div class="tool-section">
+            <div class="tool-section-title">💡 Meilleur pour</div>
+            <ul class="tool-list">
+              <li>Création rapide multi-formats</li>
+              <li>Équipes marketing & branding</li>
+              <li>IA intégrée (Magic Studio)</li>
+            </ul>
+          </div>
+          <div class="price-tag pro">Pro : 11€/mois</div>
+          <div class="rating">
+            <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span class="slide-number">1/6</span>
+        <div class="slide-nav">
+          <div class="nav-dot active"></div>
+          <div class="nav-dot"></div>
+          <div class="nav-dot"></div>
+          <div class="nav-dot"></div>
+          <div class="nav-dot"></div>
+          <div class="nav-dot"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 2 : COMPARATIF DÉTAILLÉ -->
+    <section class="slide">
+      <div class="slide-header">
+        <span class="slide-tag">📊 Analyse Technique</span>
+        <h2 class="slide-title">Tableau Comparatif Détaillé</h2>
+        <p class="slide-subtitle">Critères professionnels : facilité, compatibilité, export, collaboration et ROI.</p>
+      </div>
+
+      <div class="table-container">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th class="criteria-col">Critère</th>
+              <th>Preview.app</th>
+              <th>FlexClip</th>
+              <th>Figma</th>
+              <th>Canva</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="criteria-col">Facilité d'utilisation</td>
+              <td>⭐⭐⭐⭐<br><small>Intuitif, focus social</small></td>
+              <td>⭐⭐⭐⭐⭐<br><small>Glisser-déposer vidéo</small></td>
+              <td>⭐⭐⭐<br><small>Courbe d'apprentissage</small></td>
+              <td class="best-pick">🏆 ⭐⭐⭐⭐⭐<br><small>Le plus accessible</small></td>
+            </tr>
+            <tr>
+              <td class="criteria-col">Templates marketing</td>
+              <td>⭐⭐⭐<br><small>Focus Instagram/LinkedIn</small></td>
+              <td>⭐⭐⭐⭐<br><small>Reels/TikTok optimisés</small></td>
+              <td>⭐⭐<br><small>À créer soi-même</small></td>
+              <td class="best-pick">🏆 ⭐⭐⭐⭐⭐<br><small>50k+ templates pro</small></td>
+            </tr>
+            <tr>
+              <td class="criteria-col">Collaboration équipe</td>
+              <td>⭐⭐⭐<br><small>Calendrier partagé</small></td>
+              <td>⭐⭐<br><small>Partage lien simple</small></td>
+              <td class="best-pick">🏆 ⭐⭐⭐⭐⭐<br><small>Temps réel + commentaires</small></td>
+              <td>⭐⭐⭐⭐<br><small>Dossiers team + validations</small></td>
+            </tr>
+            <tr>
+              <td class="criteria-col">Compatibilité & Intégrations</td>
+              <td>Zapier, Meta, LinkedIn</td>
+              <td>Stock libraries, YouTube</td>
+              <td class="best-pick">🏆 API, Plugins, Dev tools</td>
+              <td>Apps marketplace, 100+ intégrations</td>
+            </tr>
+            <tr>
+              <td class="criteria-col">Export & Formats</td>
+              <td>PNG, JPG, PDF, carrousel</td>
+              <td>MP4, GIF, vertical/horizontal</td>
+              <td>SVG, PNG, PDF, code CSS/React</td>
+              <td class="best-pick">🏆 Tous formats + Magic Resize</td>
+            </tr>
+            <tr>
+              <td class="criteria-col">Analytics & Performance</td>
+              <td class="best-pick">🏆 Engagement social natif</td>
+              <td>⭐ Basique (vues, partages)</td>
+              <td>Via plugins externes</td>
+              <td>Canva Pro : performance visuels</td>
+            </tr>
+            <tr>
+              <td class="criteria-col">Pricing (2026)</td>
+              <td class="price-tag pro">19€/mois</td>
+              <td class="price-tag pro">12€/mois</td>
+              <td class="price-tag pro">15€/mois</td>
+              <td class="price-tag pro">11€/mois</td>
+            </tr>
+            <tr>
+              <td class="criteria-col">ROI estimé</td>
+              <td>⭐⭐⭐⭐<br><small>Gain temps planning</small></td>
+              <td>⭐⭐⭐⭐<br><small>Production vidéo x3</small></td>
+              <td>⭐⭐⭐⭐⭐<br><small>Qualité pro + collaboration</small></td>
+              <td class="best-pick">🏆 ⭐⭐⭐⭐⭐<br><small>Polyvalence maximale</small></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="slide-footer">
+        <span class="slide-number">2/6</span>
+        <div class="slide-nav">
+          <div class="nav-dot"></div>
+          <div class="nav-dot active"></div>
+          <div class="nav-dot"></div>
+          <div class="nav-dot"></div>
+          <div class="nav-dot"></div>
+          <div class="nav-dot"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 3 : WORKFLOW PROJET -->
+    <section class="slide">
+      <div class="slide-header">
+        <span class="slide-tag">🔄 Intégration Projet</span>
+        <h2 class="slide-title">À quelle étape utiliser chaque outil ?</h2>
+        <p class="slide-subtitle">Optimisez votre workflow marketing de la stratégie à la publication.</p>
+      </div>
+
+      <div class="workflow-container">
+        <div class="workflow-step">
+          <div class="step-number">1</div>
+          <div class="step-title">Stratégie & Brief</div>
+          <p style="color:var(--text-secondary);font-size:0.9rem">Définition des objectifs, cibles, charte graphique et calendrier éditorial.</p>
+          <div class="step-tools">
+            <span class="step-tool recommended">Figma</span>
+            <span class="step-tool">Canva</span>
+          </div>
+          <ul class="tool-list" style="margin-top:12px;font-size:0.85rem">
+            <li class="pro">Figma : moodboards & design system</li>
+            <li class="pro">Canva : briefs visuels rapides</li>
+          </ul>
+        </div>
+
+        <div class="workflow-step">
+          <div class="step-number">2</div>
+          <div class="step-title">Création des Assets</div>
+          <p style="color:var(--text-secondary);font-size:0.9rem">Production des visuels, vidéos, carrousels et templates réutilisables.</p>
+          <div class="step-tools">
+            <span class="step-tool recommended">Canva</span>
+            <span class="step-tool recommended">FlexClip</span>
+            <span class="step-tool">Figma</span>
+          </div>
+          <ul class="tool-list" style="margin-top:12px;font-size:0.85rem">
+            <li class="pro">Canva : visuels sociaux rapides</li>
+            <li class="pro">FlexClip : Reels & vidéos courtes</li>
+            <li class="pro">Figma : assets vectoriels pro</li>
+          </ul>
+        </div>
+
+        <div class="workflow-step">
+          <div class="step-number">3</div>
+          <div class="step-title">Validation & Collaboration</div>
+          <p style="color:var(--text-secondary);font-size:0.9rem">Revue équipe, feedback client, ajustements et approbations finales.</p>
+          <div class="step-tools">
+            <span class="step-tool recommended">Figma</span>
+            <span class="step-tool">Canva</span>
+          </div>
+          <ul class="tool-list" style="margin-top:12px;font-size:0.85rem">
+            <li class="pro">Figma : commentaires temps réel + versions</li>
+            <li class="pro">Canva : validation team + brand controls</li>
+            <li class="con">Preview/FlexClip : feedback limité</li>
+          </ul>
+        </div>
+
+        <div class="workflow-step">
+          <div class="step-number">4</div>
+          <div class="step-title">Planification & Publication</div>
+          <p style="color:var(--text-secondary);font-size:0.9rem">Programmation des posts, optimisation des horaires et analytics.</p>
+          <div class="step-tools">
+            <span class="step-tool recommended">Preview.app</span>
+            <span class="step-tool">Canva</span>
+          </div>
+          <ul class="tool-list" style="margin-top:12px;font-size:0.85rem">
+            <li class="pro">Preview : grid planner + scheduling natif</li>
+            <li class="pro">Canva Pro : planning social intégré</li>
+            <li class="con">Figma/FlexClip : export manuel requis</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span class="slide-number">3/6</span>
+        <div class="slide-nav">
+          <div class="nav-dot"></div>
+          <div class="nav-dot"></div>
+          <div class="nav-dot active"></div>
+          <div class="nav-dot"></div>
+          <div class="nav-dot"></div>
+          <div class="nav-dot"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 4 : FORCES & LIMITES -->
+    <section class="slide">
+      <div class="slide-header">
+        <span class="slide-tag">⚖️ Analyse SWOT</span>
+        <h2 class="slide-title">Forces & Limites par Outil</h2>
+        <p class="slide-subtitle">Points forts, faiblesses et cas d'usage idéaux pour chaque plateforme.</p>
+      </div>
+
+      <div class="matrix-grid">
+        <div class="matrix-card">
+          <h4>📱 Preview.app</h4>
+          <ul>
+            <li><strong>Forces</strong> : <span class="winner">Grid planner, analytics social</span></li>
+            <li><strong>Limites</strong> : Pas de vidéo, focus Instagram</li>
+            <li><strong>Idéal pour</strong> : Community managers, influenceurs</li>
+            <li><strong>À éviter si</strong> : Vous faites du vidéo-first</li>
+          </ul>
+        </div>
+
+        <div class="matrix-card">
+          <h4>🎬 FlexClip</h4>
+          <ul>
+            <li><strong>Forces</strong> : <span class="winner">Montage vidéo simple, stock inclus</span></li>
+            <li><strong>Limites</strong> : Édition avancée limitée, collaboration basique</li>
+            <li><strong>Idéal pour</strong> : Créateurs Reels/TikTok, petites équipes</li>
+            <li><strong>À éviter si</strong> : Vous avez besoin de workflows complexes</li>
+          </ul>
+        </div>
+
+        <div class="matrix-card">
+          <h4>🎨 Figma</h4>
+          <ul>
+            <li><strong>Forces</strong> : <span class="winner">Précision, collaboration, dev-ready</span></li>
+            <li><strong>Limites</strong> : Courbe d'apprentissage, pas de templates marketing</li>
+            <li><strong>Idéal pour</strong> : Designers, agences, produits digitaux</li>
+            <li><strong>À éviter si</strong> : Vous cherchez du "prêt-à-poster" rapide</li>
+          </ul>
+        </div>
+
+        <div class="matrix-card">
+          <h4>✨ Canva</h4>
+          <ul>
+            <li><strong>Forces</strong> : <span class="winner">Polyvalence, IA, templates illimités</span></li>
+            <li><strong>Limites</strong> : Personnalisation avancée parfois rigide</li>
+            <li><strong>Idéal pour</strong> : Marketing teams, freelances, PME</li>
+            <li><strong>À éviter si</strong> : Vous avez besoin de design vectoriel pro</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="background:var(--bg-secondary);padding:16px 24px;border-radius:var(--radius);margin-top:20px">
+        <strong style="color:var(--accent-secondary)">💡 Conseil pro :</strong> 
+        <span style="color:var(--text-secondary)">Combinez Figma (charte) + Canva (production) + Preview (planning) pour un workflow complet et scalable.</span>
+      </div>
+
+      <div class="slide-footer">
+        <span class="slide-number">4/6</span>
+        <div class="slide-nav">
+          <div class="nav-dot"></div>
+          <div class="nav-dot"></div>
+          <div class="nav-dot"></div>
+          <div class="nav-dot active"></div>
+          <div class="nav-dot"></div>
+          <div class="nav-dot"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 5 : MATRICE DE DÉCISION -->
+    <section class="slide">
+      <div class="slide-header">
+        <span class="slide-tag">🎯 Quick Decision</span>
+        <h2 class="slide-title">Quel outil choisir selon votre profil ?</h2>
+        <p class="slide-subtitle">Matrice de recommandation basée sur vos objectifs, budget et niveau technique.</p>
+      </div>
+
+      <div class="matrix-grid">
+        <div class="matrix-card" style="border-left:4px solid var(--accent-success)">
+          <h4>👤 Freelance / Solo Creator</h4>
+          <p style="color:var(--text-secondary);margin-bottom:12px;font-size:0.95rem">Budget serré, besoin de rapidité, polyvalence.</p>
+          <div style="display:flex;align-items:center;gap:8px;margin:8px 0">
+            <span style="font-weight:700;color:var(--accent-primary)">🥇 Top pick :</span>
+            <strong>Canva Pro</strong>
+          </div>
+          <ul class="tool-list" style="font-size:0.9rem">
+            <li class="pro">11€/mois pour tout faire</li>
+            <li class="pro">Templates illimités + IA</li>
+            <li class="pro">Export multi-réseaux en 1 clic</li>
+            <li class="con">Moins précis que Figma pour le branding</li>
+          </ul>
+        </div>
+
+        <div class="matrix-card" style="border-left:4px solid var(--accent-warning)">
+          <h4>🎥 Vidéo-First / Reels Creator</h4>
+          <p style="color:var(--text-secondary);margin-bottom:12px;font-size:0.95rem">Focus TikTok, Reels, YouTube Shorts.</p>
+          <div style="display:flex;align-items:center;gap:8px;margin:8px 0">
+            <span style="font-weight:700;color:var(--accent-primary)">🥇 Top pick :</span>
+            <strong>FlexClip</strong>
+          </div>
+          <ul class="tool-list" style="font-size:0.9rem">
+            <li class="pro">12€/mois, montage vidéo simplifié</li>
+            <li class="pro">Voiceover IA + sous-titres auto</li>
+            <li class="pro">Stock vidéo/musique inclus</li>
+            <li class="con">Collaboration et analytics limités</li>
+          </ul>
+        </div>
+
+        <div class="matrix-card" style="border-left:4px solid var(--accent-primary)">
+          <h4>🏢 Agence / Équipe Marketing</h4>
+          <p style="color:var(--text-secondary);margin-bottom:12px;font-size:0.95rem">Collaboration, branding cohérent, scale.</p>
+          <div style="display:flex;align-items:center;gap:8px;margin:8px 0">
+            <span style="font-weight:700;color:var(--accent-primary)">🥇 Top pick :</span>
+            <strong>Canva Pro + Figma</strong>
+          </div>
+          <ul class="tool-list" style="font-size:0.9rem">
+            <li class="pro">Figma : charte & composants réutilisables</li>
+            <li class="pro">Canva : production rapide en équipe</li>
+            <li class="pro">Preview : planification social centralisée</li>
+            <li class="con">Investissement multi-outils requis</li>
+          </ul>
+        </div>
+
+        <div class="matrix-card" style="border-left:4px solid var(--accent-secondary)">
+          <h4>💻 Product Designer / Tech</h4>
+          <p style="color:var(--text-secondary);margin-bottom:12px;font-size:0.95rem">Design system, handoff dev, précision.</p>
+          <div style="display:flex;align-items:center;gap:8px;margin:8px 0">
+            <span style="font-weight:700;color:var(--accent-primary)">🥇 Top pick :</span>
+            <strong>Figma</strong>
+          </div>
+          <ul class="tool-list" style="font-size:0.9rem">
+            <li class="pro">Variables, components, auto-layout</li>
+            <li class="pro">Collaboration temps réel + dev mode</li>
+            <li class="pro">API + plugins pour automatisation</li>
+            <li class="con">Pas de templates marketing "prêts à l'emploi"</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span class="slide-number">5/6</span>
+        <div class="slide-nav">
+          <div class="nav-dot"></div>
+          <div class="nav-dot"></div>
+          <div class="nav-dot"></div>
+          <div class="nav-dot"></div>
+          <div class="nav-dot active"></div>
+          <div class="nav-dot"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 6 : CONCLUSION & LIENS -->
+    <section class="slide">
+      <div class="slide-header">
+        <span class="slide-tag">✅ Next Steps</span>
+        <h2 class="slide-title">Synthèse & Ressources</h2>
+        <p class="slide-subtitle">Récapitulatif des recommandations et liens utiles pour démarrer.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;flex:1;align-items:start">
+        <div>
+          <h3 style="font-size:1.3rem;margin-bottom:16px;color:var(--accent-secondary)">🏆 Notre verdict 2026</h3>
+          <div style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:16px">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+              <strong>Polyvalence</strong>
+              <span class="winner">Canva</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+              <strong>Qualité Pro</strong>
+              <span class="winner">Figma</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+              <strong>Vidéo Sociale</strong>
+              <span class="winner">FlexClip</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <strong>Planning Social</strong>
+              <span class="winner">Preview.app</span>
+            </div>
+          </div>
+          
+          <h3 style="font-size:1.1rem;margin:24px 0 12px;color:var(--accent-secondary)">💡 Workflow recommandé</h3>
+          <ul class="tool-list" style="font-size:0.95rem">
+            <li class="pro"><strong>Figma</strong> : Créer la charte & composants</li>
+            <li class="pro"><strong>Canva</strong> : Produire les visuels en équipe</li>
+            <li class="pro"><strong>FlexClip</strong> : Monter les Reels/vidéos</li>
+            <li class="pro"><strong>Preview.app</strong> : Planifier & publier sur social</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 style="font-size:1.3rem;margin-bottom:16px;color:var(--accent-secondary)">🔗 Liens officiels</h3>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <a href="https://preview.app" target="_blank" style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--bg-secondary);border-radius:10px;text-decoration:none;color:var(--text-primary);transition:all 0.2s;border:1px solid var(--border-color)">
+              <span style="width:24px;height:24px;border-radius:6px;background:linear-gradient(135deg,#667eea,#764ba2);display:grid;place-items:center;font-weight:700;font-size:0.8rem">P</span>
+              <span>Preview.app →</span>
+            </a>
+            <a href="https://flexclip.com" target="_blank" style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--bg-secondary);border-radius:10px;text-decoration:none;color:var(--text-primary);transition:all 0.2s;border:1px solid var(--border-color)">
+              <span style="width:24px;height:24px;border-radius:6px;background:linear-gradient(135deg,#f093fb,#f5576c);display:grid;place-items:center;font-weight:700;font-size:0.8rem">F</span>
+              <span>FlexClip →</span>
+            </a>
+            <a href="https://figma.com" target="_blank" style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--bg-secondary);border-radius:10px;text-decoration:none;color:var(--text-primary);transition:all 0.2s;border:1px solid var(--border-color)">
+              <span style="width:24px;height:24px;border-radius:6px;background:linear-gradient(135deg,#f24e1e,#ff7262);display:grid;place-items:center;font-weight:700;font-size:0.8rem">Fg</span>
+              <span>Figma →</span>
+            </a>
+            <a href="https://canva.com" target="_blank" style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--bg-secondary);border-radius:10px;text-decoration:none;color:var(--text-primary);transition:all 0.2s;border:1px solid var(--border-color)">
+              <span style="width:24px;height:24px;border-radius:6px;background:linear-gradient(135deg,#00c4cc,#7d59ff);display:grid;place-items:center;font-weight:700;font-size:0.8rem">C</span>
+              <span>Canva →</span>
+            </a>
+          </div>
+
+          <div style="margin-top:32px;padding:20px;background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));border-radius:var(--radius);color:white">
+            <strong style="display:block;margin-bottom:8px">🌐 Voir ce guide en ligne</strong>
+            <a href="https://bravo365.github.io/SEO/Comparatif_Outils_Creatifs_2026.html" style="color:white;text-decoration:underline;font-weight:600">bravo365.github.io/SEO/Comparatif_Outils_Creatifs_2026.html</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span class="slide-number">6/6</span>
+        <div class="slide-nav">
+          <div class="nav-dot"></div>
+          <div class="nav-dot"></div>
+          <div class="nav-dot"></div>
+          <div class="nav-dot"></div>
+          <div class="nav-dot"></div>
+          <div class="nav-dot active"></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    // Navigation dots interaction
+    document.querySelectorAll('.nav-dot').forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        document.querySelector('.slides').scrollTo({
+          left: index * window.innerWidth,
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Update active dot on scroll
+    const slides = document.querySelector('.slides');
+    const dots = document.querySelectorAll('.nav-dot');
+    
+    slides.addEventListener('scroll', () => {
+      const currentIndex = Math.round(slides.scrollLeft / window.innerWidth);
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      const currentIndex = Math.round(slides.scrollLeft / window.innerWidth);
+      if (e.key === 'ArrowRight' && currentIndex < dots.length - 1) {
+        slides.scrollTo({ left: (currentIndex + 1) * window.innerWidth, behavior: 'smooth' });
+      }
+      if (e.key === 'ArrowLeft' && currentIndex > 0) {
+        slides.scrollTo({ left: (currentIndex - 1) * window.innerWidth, behavior: 'smooth' });
+      }
+    });
+  </script>
+
+</body>
+</html>
+```
