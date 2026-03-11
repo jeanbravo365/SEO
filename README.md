@@ -79,7 +79,7 @@ Ce dépôt contient **3 guides HTML complets**, conçus pour être consultés da
 3. Profitez du design responsive, des interactions et de la navigation fluide
 
 ### 🔹 En local
-```bash
+
 # Cloner le dépôt
 git clone https://github.com/jeanbravo365/SEO.git
 cd SEO
