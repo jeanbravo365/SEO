@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎬 Top 5 IA Vidéo - Marketing Contenu 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --secondary: #ec4899;
+      --accent: #22d3ee;
+      --bg: #0f172a;
+      --bg-card: #1e293b;
+      --bg-card-hover: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --border: #334155;
+      --gradient-1: linear-gradient(135deg, #6366f1, #ec4899);
+      --gradient-2: linear-gradient(135deg, #22d3ee, #6366f1);
+      --shadow: 0 10px 40px -10px rgba(0,0,0,0.5);
+      --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.3);
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(ellipse at 20% 80%, rgba(99,102,241,0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(236,72,153,0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(34,211,238,0.08) 0%, transparent 70%);
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    /* Header */
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      position: relative;
+    }
+    
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--gradient-1);
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
+      50% { box-shadow: 0 0 0 12px rgba(99, 102, 241, 0); }
+    }
+    
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1.125rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    
+    /* Criteria Legend */
+    .criteria-legend {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+      padding: 1rem;
+      background: var(--bg-card);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+    }
+    
+    .criteria-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+    
+    .criteria-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    
+    .criteria-dot.artifacts { background: var(--success); }
+    .criteria-dot.free { background: var(--accent); }
+    .criteria-dot.opensource { background: var(--primary); }
+    .criteria-dot.time { background: var(--warning); }
+    .criteria-dot.resolution { background: var(--secondary); }
+    
+    /* Top 5 Grid */
+    .top5-grid {
+      display: grid;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .rank-card {
+      background: var(--bg-card);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1.5rem;
+      align-items: start;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .rank-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient-1);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .rank-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+      box-shadow: var(--shadow-glow);
+    }
+    
+    .rank-card:hover::before { opacity: 1; }
+    
+    .rank-badge {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: var(--gradient-1);
+      flex-shrink: 0;
+    }
+    
+    .rank-card:nth-child(2) .rank-badge { background: var(--gradient-2); }
+    .rank-card:nth-child(3) .rank-badge { background: linear-gradient(135deg, #f59e0b, #ec4899); }
+    .rank-card:nth-child(4) .rank-badge { background: linear-gradient(135deg, #10b981, #22d3ee); }
+    .rank-card:nth-child(5) .rank-badge { background: linear-gradient(135deg, #6366f1, #22d3ee); }
+    
+    .card-content { min-width: 0; }
+    
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+    }
+    
+    .tool-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    
+    .tool-type {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+    
+    .type-saas { background: rgba(236, 72, 153, 0.2); color: #f472b6; }
+    .type-oss { background: rgba(99, 102, 241, 0.2); color: #a5b4fc; }
+    .type-free { background: rgba(16, 185, 129, 0.2); color: #6ee7b7; }
+    
+    .tool-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    
+    /* Metrics Grid */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.75rem;
+    }
+    
+    .metric {
+      background: rgba(255,255,255,0.05);
+      padding: 0.75rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    
+    .metric-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    
+    .metric-value {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    
+    .metric-value.good { color: var(--success); }
+    .metric-value.warning { color: var(--warning); }
+    .metric-value.neutral { color: var(--text-muted); }
+    
+    /* Stars Rating */
+    .stars {
+      display: flex;
+      gap: 2px;
+      color: #fbbf24;
+      font-size: 0.875rem;
+    }
+    
+    /* Price Badge */
+    .price-badge {
+      text-align: right;
+      flex-shrink: 0;
+    }
+    
+    .price {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+    
+    .price.free { color: var(--success); }
+    .price.paid { color: var(--text); }
+    
+    .price-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    
+    /* Best For Tags */
+    .best-for {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    
+    .best-tag {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      background: rgba(99, 102, 241, 0.2);
+      color: #a5b4fc;
+      font-weight: 500;
+    }
+    
+    /* Comparison Table */
+    .comparison-section {
+      margin: 4rem 0;
+      padding: 2rem;
+      background: var(--bg-card);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+    
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    
+    .comparison-table th {
+      text-align: left;
+      padding: 1rem;
+      background: rgba(255,255,255,0.05);
+      font-weight: 600;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .comparison-table td {
+      padding: 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    
+    .comparison-table tr:hover { background: rgba(255,255,255,0.03); }
+    
+    .check { color: var(--success); font-weight: 600; }
+    .cross { color: var(--danger); font-weight: 600; }
+    
+    /* Recommendation Box */
+    .recommendation {
+      margin: 3rem 0;
+      padding: 2rem;
+      background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(236,72,153,0.1));
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    
+    .recommendation h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    
+    .recommendation p {
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 900px) {
+      .rank-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .price-badge { text-align: center; }
+      .card-header { justify-content: center; }
+      .best-for { justify-content: center; }
+    }
+    
+    @media (max-width: 600px) {
+      .container { padding: 1rem; }
+      .metrics-grid { grid-template-columns: 1fr 1fr; }
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .rank-card {
+      animation: fadeInUp 0.5s ease forwards;
+      animation-delay: calc(var(--i) * 0.1s);
+      opacity: 0;
+    }
+    
+    .rank-card:nth-child(1) { --i: 1; opacity: 1; animation-delay: 0s; }
+    .rank-card:nth-child(2) { --i: 2; opacity: 1; animation-delay: 0.1s; }
+    .rank-card:nth-child(3) { --i: 3; opacity: 1; animation-delay: 0.2s; }
+    .rank-card:nth-child(4) { --i: 4; opacity: 1; animation-delay: 0.3s; }
+    .rank-card:nth-child(5) { --i: 5; opacity: 1; animation-delay: 0.4s; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Header -->
+    <header>
+      <div class="badge">🚀 Mise à jour 2026</div>
+      <h1>Top 5 IA Vidéo pour le Marketing de Contenu</h1>
+      <p class="subtitle">Analyse comparative des meilleures solutions Image-to-Video basée sur Stable Diffusion, I2VGen & SVD</p>
+      
+      <!-- Criteria Legend -->
+      <div class="criteria-legend">
+        <div class="criteria-item"><span class="criteria-dot artifacts"></span> Moins d'artefacts</div>
+        <div class="criteria-item"><span class="criteria-dot free"></span> Plan gratuit</div>
+        <div class="criteria-item"><span class="criteria-dot opensource"></span> Open Source</div>
+        <div class="criteria-item"><span class="criteria-dot time"></span> Durée générée</div>
+        <div class="criteria-item"><span class="criteria-dot resolution"></span> Résolution max</div>
+      </div>
+    </header>
+
+    <!-- Top 5 Cards -->
+    <div class="top5-grid">
+      
+      <!-- #1 Runway Gen-4 Turbo -->
+      <article class="rank-card">
+        <div class="rank-badge">1</div>
+        <div class="card-content">
+          <div class="card-header">
+            <span class="tool-name">Runway Gen-4 Turbo</span>
+            <span class="tool-type type-saas">SaaS Premium</span>
+          </div>
+          <p class="tool-desc">La référence professionnelle : génération en temps réel (<5s), contrôle caméra 3D avancé, et fidélité photoréaliste inégalée pour des contenus marketing percutants.</p>
+          
+          <div class="metrics-grid">
+            <div class="metric">
+              <div class="metric-label">✨ Artefacts</div>
+              <div class="metric-value good">Presque aucun</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">🆓 Gratuit ?</div>
+              <div class="metric-value warning">125 crédits essai</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">🔓 Open Source</div>
+              <div class="metric-value neutral">Non</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">⏱️ Durée</div>
+              <div class="metric-value">10 secondes</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">📐 Résolution</div>
+              <div class="metric-value good">1280×720</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">⭐ Cohérence</div>
+              <div class="stars">★★★★★</div>
+            </div>
+          </div>
+          
+          <div class="best-for">
+            <span class="best-tag">🎯 Publicités premium</span>
+            <span class="best-tag">🎬 Contenu brandé</span>
+            <span class="best-tag">⚡ Production rapide</span>
+          </div>
+        </div>
+        <div class="price-badge">
+          <div class="price paid">À partir de $15/mois</div>
+          <div class="price-note">Essai gratuit inclus</div>
+        </div>
+      </article>
+
+      <!-- #2 Luma Dream Machine v3 -->
+      <article class="rank-card">
+        <div class="rank-badge">2</div>
+        <div class="card-content">
+          <div class="card-header">
+            <span class="tool-name">Luma Dream Machine v3</span>
+            <span class="tool-type type-saas">SaaS Freemium</span>
+          </div>
+          <p class="tool-desc">Génération 4K avec "motion brush" et latence <3s. Idéal pour des visuels impactants avec contrôle précis du mouvement et formats sociaux natifs.</p>
+          
+          <div class="metrics-grid">
+            <div class="metric">
+              <div class="metric-label">✨ Artefacts</div>
+              <div class="metric-value good">Léger flou</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">🆓 Gratuit ?</div>
+              <div class="metric-value good">5 vidéos/jour</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">🔓 Open Source</div>
+              <div class="metric-value neutral">Non</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">⏱️ Durée</div>
+              <div class="metric-value">5 secondes</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">📐 Résolution</div>
+              <div class="metric-value good">4K (3840×2160)</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">⭐ Cohérence</div>
+              <div class="stars">★★★★★</div>
+            </div>
+          </div>
+          
+          <div class="best-for">
+            <span class="best-tag">📱 Réseaux sociaux</span>
+            <span class="best-tag">🎨 Créatifs visuels</span>
+            <span class="best-tag">🔄 Tests A/B</span>
+          </div>
+        </div>
+        <div class="price-badge">
+          <div class="price paid">Pro : $24/mois</div>
+          <div class="price-note">5 vidéos gratuites/jour</div>
+        </div>
+      </article>
+
+      <!-- #3 Meta Create v2 (Vibes+) -->
+      <article class="rank-card">
+        <div class="rank-badge">3</div>
+        <div class="card-content">
+          <div class="card-header">
+            <span class="tool-name">Meta Create v2 (Vibes+)</span>
+            <span class="tool-type type-free">100% Gratuit</span>
+          </div>
+          <p class="tool-desc">L'outsider généreux de Meta : 1080p sans watermark, lipsync intégré, formats 16:9 et 9:16. Parfait pour démarrer sans budget.</p>
+          
+          <div class="metrics-grid">
+            <div class="metric">
+              <div class="metric-label">✨ Artefacts</div>
+              <div class="metric-value good">Minimal</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">🆓 Gratuit ?</div>
+              <div class="metric-value good">✅ Illimité</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">🔓 Open Source</div>
+              <div class="metric-value neutral">Non</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">⏱️ Durée</div>
+              <div class="metric-value">10 secondes</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">📐 Résolution</div>
+              <div class="metric-value good">1080p</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">⭐ Cohérence</div>
+              <div class="stars">★★★★☆</div>
+            </div>
+          </div>
+          
+          <div class="best-for">
+            <span class="best-tag">💰 Budget zéro</span>
+            <span class="best-tag">🗣️ Contenu lipsync</span>
+            <span class="best-tag">📊 Volume élevé</span>
+          </div>
+        </div>
+        <div class="price-badge">
+          <div class="price free">100% Gratuit</div>
+          <div class="price-note">Sans watermark • Illimité</div>
+        </div>
+      </article>
+
+      <!-- #4 Kling 2.0 -->
+      <article class="rank-card">
+        <div class="rank-badge">4</div>
+        <div class="card-content">
+          <div class="card-header">
+            <span class="tool-name">Kling 2.0</span>
+            <span class="tool-type type-saas">SaaS Pro</span>
+          </div>
+          <p class="tool-desc">La puissance chinoise : 4K native, contrôle caméra avancé (dolly, zoom, rotation) et génération jusqu'à 12s. Excellence pour le storytelling.</p>
+          
+          <div class="metrics-grid">
+            <div class="metric">
+              <div class="metric-label">✨ Artefacts</div>
+              <div class="metric-value warning">Flou arrière-plan</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">🆓 Gratuit ?</div>
+              <div class="metric-value warning">166 crédits</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">🔓 Open Source</div>
+              <div class="metric-value neutral">Non</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">⏱️ Durée</div>
+              <div class="metric-value good">Jusqu'à 12s</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">📐 Résolution</div>
+              <div class="metric-value good">4K</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">⭐ Réalisme</div>
+              <div class="stars">★★★★★</div>
+            </div>
+          </div>
+          
+          <div class="best-for">
+            <span class="best-tag">🎥 Storytelling</span>
+            <span class="best-tag">🎬 Cinématique</span>
+            <span class="best-tag">🌍 Marchés internationaux</span>
+          </div>
+        </div>
+        <div class="price-badge">
+          <div class="price paid">API payante</div>
+          <div class="price-note">Crédits gratuits limités</div>
+        </div>
+      </article>
+
+      <!-- #5 Stable Video Diffusion 2.0 -->
+      <article class="rank-card">
+        <div class="rank-badge">5</div>
+        <div class="card-content">
+          <div class="card-header">
+            <span class="tool-name">Stable Video Diffusion 2.0</span>
+            <span class="tool-type type-oss">Open Source</span>
+          </div>
+          <p class="tool-desc">La liberté technique : 1080p native, 48 frames, scheduler optimisé. À héberger soi-même pour un contrôle total et des coûts marginaux.</p>
+          
+          <div class="metrics-grid">
+            <div class="metric">
+              <div class="metric-label">✨ Artefacts</div>
+              <div class="metric-value warning">Ghosting occasionnel</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">🆓 Gratuit ?</div>
+              <div class="metric-value good">✅ Open Source</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">🔓 Open Source</div>
+              <div class="metric-value good">✅ Oui (Apache 2.0)</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">⏱️ Durée</div>
+              <div class="metric-value">~48 frames (~2s)</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">📐 Résolution</div>
+              <div class="metric-value good">1080p native</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">⭐ Flexibilité</div>
+              <div class="stars">★★★★★</div>
+            </div>
+          </div>
+          
+          <div class="best-for">
+            <span class="best-tag">🔧 Équipes techniques</span>
+            <span class="test-tag">🏢 Enterprise on-premise</span>
+            <span class="best-tag">🧪 Expérimentation</span>
+          </div>
+        </div>
+        <div class="price-badge">
+          <div class="price free">Gratuit</div>
+          <div class="price-note">Coût infrastructure à prévoir</div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Comparison Table -->
+    <section class="comparison-section">
+      <h2 class="section-title">📊 Tableau Comparatif Détaillé</h2>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Outil</th>
+            <th>Type</th>
+            <th>Artefacts</th>
+            <th>Gratuit</th>
+            <th>Open Source</th>
+            <th>Durée Max</th>
+            <th>Résolution</th>
+            <th>Idéal pour</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Runway Gen-4 Turbo</strong></td>
+            <td>SaaS Premium</td>
+            <td class="check">Minimal</td>
+            <td class="warning">Essai</td>
+            <td class="cross">Non</td>
+            <td>10s</td>
+            <td>720p</td>
+            <td>Publicités pro</td>
+          </tr>
+          <tr>
+            <td><strong>Luma Dream Machine v3</strong></td>
+            <td>SaaS Freemium</td>
+            <td class="check">Léger flou</td>
+            <td class="check">5/jour</td>
+            <td class="cross">Non</td>
+            <td>5s</td>
+            <td class="good">4K</td>
+            <td>Réseaux sociaux</td>
+          </tr>
+          <tr>
+            <td><strong>Meta Create v2</strong></td>
+            <td>SaaS Gratuit</td>
+            <td class="check">Minimal</td>
+            <td class="check">✅ Illimité</td>
+            <td class="cross">Non</td>
+            <td>10s</td>
+            <td>1080p</td>
+            <td>Volume / Budget</td>
+          </tr>
+          <tr>
+            <td><strong>Kling 2.0</strong></td>
+            <td>SaaS Pro</td>
+            <td class="warning">Flou BG</td>
+            <td class="warning">Crédits</td>
+            <td class="cross">Non</td>
+            <td class="good">12s</td>
+            <td class="good">4K</td>
+            <td>Storytelling</td>
+          </tr>
+          <tr>
+            <td><strong>SVD 2.0</strong></td>
+            <td>Open Source</td>
+            <td class="warning">Ghosting</td>
+            <td class="check">✅ Local</td>
+            <td class="check">✅ Oui</td>
+            <td>~2s (48f)</td>
+            <td>1080p</td>
+            <td>Technique / R&D</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Recommendation -->
+    <div class="recommendation">
+      <h3>💡 Notre Recommandation Stratégique</h3>
+      <p>
+        Pour le <strong>marketing de contenu en 2026</strong>, privilégiez <strong>Luma Dream Machine v3</strong> pour son excellent rapport qualité/prix/gratuité. 
+        Complétez avec <strong>Meta Create v2</strong> pour la production à volume élevé sans budget. 
+        Réservez <strong>Runway Gen-4 Turbo</strong> pour vos campagnes premium nécessitant une qualité irréprochable.
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>📋 Analyse basée sur la documentation Lombard Web Services • Données mises à jour Q1 2026</p>
+      <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.7;">
+        Les critères "artefacts", "cohérence" et "réalisme" sont évalués sur une échelle subjective basée sur les retours communauté et benchmarks publics.
+      </p>
+    </footer>
+
+  </div>
+
+  <script>
+    // Simple hover effect enhancement
+    document.querySelectorAll('.rank-card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.zIndex = '10';
+      });
+      card.addEventListener('mouseleave', function() {
+        this.style.zIndex = '1';
+      });
+    });
+  </script>
+</body>
+</html>
